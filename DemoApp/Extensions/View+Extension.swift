@@ -34,3 +34,10 @@ struct RoundedCorner: Shape {
     }
 }
 
+
+// 添加数组安全访问扩展
+extension Collection {
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
